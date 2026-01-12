@@ -1,6 +1,4 @@
-<span style="font-size: 2rem; font-weight: bold;">
-  연결 리스트 (Linked List)
-</span>
+# 연결 리스트 (Linked List)
 
 ## 개념
 데이터를 **노드(Node)** 라는 단위로 나누어 메모리상에 비연속적으로 저장하는 방식을 사용하는 자료구조이다.
