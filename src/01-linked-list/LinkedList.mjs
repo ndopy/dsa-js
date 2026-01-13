@@ -67,7 +67,7 @@ class LinkedList {
     }
 
     if (index === 0) {
-      let deleteNode = this.head;
+      const deleteNode = this.head;
       this.head = this.head.next;
       this.count -= 1;
 
@@ -79,7 +79,7 @@ class LinkedList {
         currentNode = currentNode.next;
       }
 
-      let deleteNode = currentNode.next;
+      const deleteNode = currentNode.next;
       currentNode.next = currentNode.next.next;
       this.count -= 1;
       return deleteNode;
