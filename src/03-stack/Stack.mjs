@@ -14,6 +14,9 @@ class Stack {
   }
 
   peek() {
+    if (this.isEmpty()) {
+      return null;
+    }
     return this.list.get(this.list.length - 1);
   }
 
