@@ -228,6 +228,19 @@ class DoublyLinkedList {
   printAll() {
     console.log(this.toArray());
   }
+
+  find(predicate) {
+    let currentNode = this.#head;
+
+    while (currentNode !== null) {
+      if (predicate(currentNode.data)) {
+        return currentNode.data;
+      }
+      currentNode = currentNode.next;
+    }
+
+    return null;
+  }
 }
 
 export { DoublyLinkedList };
