@@ -46,7 +46,7 @@ class HashTable {
       return null;
     }
 
-    const data = bucket.find((data) => data.key === key);
+    const data = bucket.find((entry) => entry.key === key);
     return data ? data.value : null;
   }
 
@@ -58,7 +58,7 @@ class HashTable {
       return null;
     }
 
-    const data = bucket.find((data) => data.key === key);
+    const data = bucket.find((entry) => entry.key === key);
 
     if (!data) {
       return null;
