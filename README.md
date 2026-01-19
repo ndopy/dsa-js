@@ -17,15 +17,15 @@
 <br/>
 
 ## 자료구조
-- [ ] 연결 리스트 (Linked List)
-- [ ] 스택 (Stack)
-- [ ] 큐 (Queue)
-- [ ] 덱 (Deque)
-- [ ] 해시 테이블 (Hash Table)
-- [ ] 셋 (Set)
+- [x] 연결 리스트 (Linked List)
+- [x] 스택 (Stack)
+- [x] 큐 (Queue)
+- [x] 덱 (Deque)
+- [x] 해시 테이블 (Hash Table)
+- [x] 셋 (Set)
 
 ## 알고리즘
-- [ ] 재귀 (Recursion)
+- [x] 재귀 (Recursion)
 - [ ] 정렬 - 버블 정렬
 - [ ] 정렬 - 선택 정렬
 - [ ] 정렬 - 삽입 정렬
