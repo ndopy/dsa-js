@@ -1,29 +1,51 @@
-function merge(left, right) {
-  const result = [];
+function merge(arr, left, mid, right) {
+  const temp = [];
 
-  while (left.length > 0 && right.length > 0) {
-    if (left[0] <= right[0]) {
-      result.push(left.shift());
+  let leftIndex = left;
+  let rightIndex = mid + 1;
+  let tempIndex = 0;
+
+  // [7, 8], [2, 5]
+  while (leftIndex <= mid && rightIndex <= right) {
+    if (arr[leftIndex] <= arr[rightIndex]) {
+      temp[tempIndex] = arr[leftIndex];
+      leftIndex++;
     } else {
-      result.push(right.shift());
+      temp[tempIndex] = arr[rightIndex];
+      rightIndex++;
     }
+    tempIndex++;
   }
 
-  return [...result, ...left, ...right];
+  // 왼쪽이든 오른쪽이든 남은 항목들을 마저 채워주기
+  while (leftIndex <= mid) {
+    temp[tempIndex] = arr[leftIndex];
+    leftIndex++;
+    tempIndex++;
+  }
+
+  while (rightIndex <= right) {
+    temp[tempIndex] = arr[rightIndex];
+    rightIndex++;
+    tempIndex++;
+  }
+
+  for (let i = 0; i < temp.length; i++) {
+    arr[left + i] = temp[i];
+  }
 }
 
-function mergeSort(arr) {
-  if (arr.length <= 1) {
-    return arr;
+function mergeSort(arr, left, right) {
+  if (left >= right) {
+    return;
   }
 
-  const mid = Math.floor(arr.length / 2);
-  const left = mergeSort(arr.slice(0, mid));
-  const right = mergeSort(arr.slice(mid));
-
-  return merge(left, right);
+  const mid = Math.floor((left + right) / 2);
+  mergeSort(arr, left, mid);
+  mergeSort(arr, mid + 1, right);
+  merge(arr, left, mid, right);
 }
 
 const arr = [8, 7, 5, 2, 1, 3, 4, 6];
-const result = mergeSort(arr);
-console.log(result);
+mergeSort(arr, 0, arr.length - 1);
+console.log(arr);
